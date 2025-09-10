@@ -1,22 +1,23 @@
-import { useState } from 'react'
-import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import MainContent from './components/MainContent'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <div>
-        <p className="text-2xl font-bold text-gray-900">Count is {count}</p>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={() => setCount((count) => count + 1)}>
-          Increment
-        </button>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <div className="flex">
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:section" element={<MainContent />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
-    </>
+    </div>
   )
 }
 
