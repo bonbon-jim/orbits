@@ -9,14 +9,16 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <div className="flex">
-        <Sidebar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:section" element={<MainContent />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project/:section" element={
+          <div className="flex">
+            <Sidebar />
+            <MainContent />
+          </div>
+        } />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   )
 }

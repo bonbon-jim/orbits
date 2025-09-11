@@ -10,16 +10,16 @@ const Header = () => {
               <h1 className="text-2xl font-bold text-blue-600">Orbits UI</h1>
             </div>
             <nav className="hidden md:ml-6 md:flex space-x-8">
-              <a href="#" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+              <a href="document" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Documentation
               </a>
-              <a href="#" className="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+              <a href="component" className="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Components
               </a>
-              <a href="#" className="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+              <a href="examples" className="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Examples
               </a>
-              <a href="#" className="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+              <a href="blog" className="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Blog
               </a>
             </nav>

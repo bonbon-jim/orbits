@@ -22,7 +22,7 @@ const NotFound = () => {
           <div className="text-sm text-gray-500">
             <p>或者</p>
             <Link 
-              to="/introduction" 
+              to="/project/introduction" 
               className="text-blue-600 hover:text-blue-800 underline"
             >
               查看文档

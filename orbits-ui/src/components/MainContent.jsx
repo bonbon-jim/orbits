@@ -1,9 +1,10 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const MainContent = () => {
-  // Remove useParams hook as it's not compatible with SSR
-  // We'll handle this through props or client-side hydration
-  const activeSection = 'introduction' // Default value for SSR
+  // For SSR compatibility, we'll use useParams but handle the case where it might not be available
+  const params = useParams()
+  const activeSection = params.section || 'introduction' // Default value for SSR
   const content = {
     introduction: {
       title: "Introduction to Orbits UI",

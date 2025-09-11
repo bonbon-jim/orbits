@@ -1,6 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/project/introduction');
+  };
   return (
     <div className="p-8">
       <div className="max-w-6xl mx-auto">
@@ -42,11 +48,14 @@ const Home = () => {
         </div>
 
         <div className="mt-12 text-center space-x-4">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-200">
+          <button 
+            onClick={handleGetStarted}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-200"
+          >
             立即开始使用
           </button>
           <a 
-            href="/introduction" 
+            href="/project/introduction" 
             className="inline-block border border-blue-600 text-blue-600 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg text-lg transition duration-200"
           >
             查看文档
