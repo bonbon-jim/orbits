@@ -4,6 +4,9 @@ import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import ExchangeHome from './pages/Exchange/ExchangeHome'
+import TradePage from './pages/Exchange/TradePage'
+import ProtectedRoute from './components/Exchange/ProtectedRoute'
 
 function App() {
   return (
@@ -16,6 +19,13 @@ function App() {
             <Sidebar />
             <MainContent />
           </div>
+        } />
+        {/* 交易所路由 */}
+        <Route path="/exchange" element={<ExchangeHome />} />
+        <Route path="/exchange/trade/:symbol" element={
+          <ProtectedRoute requiredPermission="trade">
+            <TradePage />
+          </ProtectedRoute>
         } />
         <Route path="*" element={<NotFound />} />
       </Routes>

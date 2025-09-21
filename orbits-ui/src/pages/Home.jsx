@@ -60,6 +60,12 @@ const Home = () => {
           >
             查看文档
           </a>
+          <a 
+            href="/exchange" 
+            className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-200"
+          >
+            进入交易所
+          </a>
         </div>
       </div>
     </div>
