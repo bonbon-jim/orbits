@@ -48,35 +48,12 @@ const ProtectedRoute = ({ children, requiredPermission = null }) => {
     const from = location.pathname + location.search;
     localStorage.setItem('redirectAfterLogin', from);
     
-    // 显示登录模态框而不是直接重定向
-    setShowLoginModal(true);
-    
-    // 仍然渲染子组件，但会显示登录模态框
-    return (
-      <>
-        {children}
-        <LoginModal 
-          open={showLoginModal} 
-          onClose={() => setShowLoginModal(false)}
-        />
-      </>
-    );
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   // 检查权限
   if (requiredPermission && !hasPermission(requiredPermission)) {
-    setShowPermissionError(true);
-    
-    return (
-      <>
-        {children}
-        <PermissionError 
-          open={showPermissionError}
-          onClose={() => setShowPermissionError(false)}
-          requiredPermission={requiredPermission}
-        />
-      </>
-    );
+    return <PermissionError open={true} onClose={() => {}} requiredPermission={requiredPermission} />;
   }
 
   // 如果已认证且有权限，直接渲染子组件

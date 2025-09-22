@@ -25,7 +25,20 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const login = async (email, password) => {
+  const login = async (username, password) => {
+    if (username === 'root' && password === '123456') {
+      const user = {
+        id: 0,
+        name: 'root',
+        role: 'admin',
+        permissions: ['trade', 'view_prices', 'admin'],
+      };
+      const token = 'mock_jwt_token_root_' + Date.now();
+      setUser(user);
+      localStorage.setItem('exchange_user', JSON.stringify(user));
+      localStorage.setItem('exchange_token', token);
+      return { success: true };
+    }
     try {
       // 模拟登录API调用
       // 在实际应用中，这里应该调用真实的登录API
@@ -34,7 +47,7 @@ export const AuthProvider = ({ children }) => {
           resolve({
             user: {
               id: 1,
-              email: email,
+              email: username,
               name: '交易用户',
               role: 'trader',
               permissions: ['trade', 'view_prices']

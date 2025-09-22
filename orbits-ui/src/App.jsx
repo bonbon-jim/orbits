@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
 import Home from './pages/Home'
+import Login from './pages/Login'
 import NotFound from './pages/NotFound'
 import ExchangeHome from './pages/Exchange/ExchangeHome'
 import TradePage from './pages/Exchange/TradePage'
@@ -13,6 +14,7 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       <Header />
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/project/:section" element={
           <div className="flex">
