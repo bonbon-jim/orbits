@@ -1,6 +1,6 @@
 // 在任何组件中使用
 import React from 'react';
-import { useNotification } from '../contexts/NotificationContext';
+import { useNotification } from '../../hooks/useNotification';
 
 const MyComponent = () => {
   const { showError, showSuccess, showWarning, showInfo } = useNotification();
