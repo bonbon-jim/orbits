@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Typography, Box, Grid, TextField, InputAdornment } from '@mui/material';
 import { Search } from '@mui/icons-material';
-import CryptoCard from '../../components/Exchange/CryptoCard';
+import CryptoCard from '../../components/exchange/CryptoCard';
 import { api } from '../../services/api';
 
 const ExchangeHome = () => {

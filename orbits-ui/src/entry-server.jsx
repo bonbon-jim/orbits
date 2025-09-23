@@ -7,12 +7,21 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { StaticRouter } from 'react-router-dom';
 import App from './App';
+import { AuthProvider } from './contexts/AuthContext';
+import { setupErrorListeners } from './services/api';
 
-export function render(url) {
+// 设置错误监听器
+setupErrorListeners();
+
+export function render() {
   return ReactDOMServer.renderToString(
     <React.StrictMode>
       <StaticRouter>
-        <App />
+        <AuthProvider>
+          <NotificationProvider>
+            <App />
+          </NotificationProvider>
+        </AuthProvider>
       </StaticRouter>
     </React.StrictMode>
   );

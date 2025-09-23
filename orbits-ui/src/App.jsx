@@ -7,7 +7,7 @@ import Login from './pages/Login'
 import NotFound from './pages/NotFound'
 import ExchangeHome from './pages/Exchange/ExchangeHome'
 import TradePage from './pages/Exchange/TradePage'
-import ProtectedRoute from './components/Exchange/ProtectedRoute'
+import ProtectedRoute from './components/exchange/ProtectedRoute'
 
 function App() {
   return (
